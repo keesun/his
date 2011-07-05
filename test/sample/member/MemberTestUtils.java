@@ -9,8 +9,8 @@ import sample.domain.Member;
 public class MemberTestUtils {
 
 	public static List<Member> makeMember5000() {
-		List<Member> member1000 = new ArrayList<Member>();
-		for(int i = 0 ; i < 1000 ; i++){
+		List<Member> member5000 = new ArrayList<Member>();
+		for(int i = 0 ; i < 5000 ; i++){
 			Member member = new Member();
 			member.setId(i);
 			member.setName("whiteship"+i);
@@ -24,9 +24,9 @@ public class MemberTestUtils {
 			member.setName7("sddsssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssslkjfsldkjflskdjflskdjf");
 			member.setName8("sddsssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssslkjfsldkjflskdjflskdjf");
 			member.setName9("sddsssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssslkjfsldkjflskdjflskdjf");
-			member1000.add(member);
+			member5000.add(member);
 		}
-		return member1000;
+		return member5000;
 	}
 	
 }

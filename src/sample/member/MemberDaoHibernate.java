@@ -56,6 +56,9 @@ public class MemberDaoHibernate implements MemberDao{
 	public void deleteAll() {
 		getSession().createQuery("delete from Member");
 	}
-	
-	
+
+
+    public void clear() {
+        getSession().clear();
+    }
 }

@@ -37,5 +37,9 @@ public class MemberServiceHibernateImpl implements MemberService {
 	public void deleteAll() {
 		dao.deleteAll();
 	}
-	
+
+    public void flushAndClear() {
+        dao.flush();
+        dao.clear();
+    }
 }
