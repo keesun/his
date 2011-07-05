@@ -24,9 +24,6 @@
         <context:exclude-filter expression="org.springframework.stereotype.Controller" type="annotation"/>
     </context:component-scan>
 
-	<bean class="sample.member.MemberServiceHibernateImpl"/>
-	<bean class="sample.member.MemberServiceIbatisImpl"/>
-
 <!-- 
     <bean id="dataSource" class="com.mchange.v2.c3p0.ComboPooledDataSource">
         <property name="driverClass" value="${test.database.driverClassName}"/>
@@ -49,7 +46,7 @@
           class="org.springframework.jdbc.datasource.DataSourceTransactionManager"
           p:dataSource-ref="dataSource"/>  -->
 
-    <tx:annotation-driven/>
+    <tx:annotation-driven proxy-target-class="true" />
 
     <!-- ============================================================= -->
     <!--  iBatis                                                       -->
