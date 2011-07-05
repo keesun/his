@@ -1,0 +1,5 @@
+create table member ( 
+ id integer primary key,  
+ name varchar(20) not null, 
+ joined date
+) 
