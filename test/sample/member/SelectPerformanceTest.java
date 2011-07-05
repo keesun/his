@@ -17,7 +17,7 @@ import sample.domain.Member;
 
 @RunWith(SpringJUnit4ClassRunner.class)
 @ContextConfiguration("/testContext.xml")
-public class MemberServiceIntegTest {
+public class SelectPerformanceTest {
 	
 	@Autowired MemberServiceHibernateImpl memberServiceHibernate;
 	@Autowired MemberServiceIbatisImpl memberServiceIbatis;
