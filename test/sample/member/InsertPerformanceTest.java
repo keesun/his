@@ -4,6 +4,7 @@ import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.test.annotation.Repeat;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 import org.springframework.util.StopWatch;
@@ -31,21 +32,7 @@ public class InsertPerformanceTest {
     }
 
     @Test
-    public void hiebrnate(){
-        StopWatch stopWatch = new StopWatch();
-        List<Member> member5000 = MemberTestUtils.makeMember5000();
-		for(Member newMember : member5000) {
-            stopWatch.start();
-			memberServiceHibernate.add(newMember);
-            memberServiceHibernate.flushAndClear();
-            stopWatch.stop();
-		}
-        System.out.println("Hiebrnate: insert 5000 complete!");
-        System.out.println(stopWatch.prettyPrint());
-    }
-
-
-    @Test
+    @Repeat(20)
     public void iBatis(){
         StopWatch stopWatch = new StopWatch();
         List<Member> member5000 = MemberTestUtils.makeMember5000();
@@ -55,7 +42,25 @@ public class InsertPerformanceTest {
             stopWatch.stop();
 		}
         System.out.println("iBatis: insert 5000 complete!");
-        System.out.println(stopWatch.prettyPrint());
+        System.out.println(stopWatch.shortSummary());
     }
+
+    @Test
+    @Repeat(20)
+    public void hiebrnate(){
+        StopWatch stopWatch = new StopWatch();
+        List<Member> member5000 = MemberTestUtils.makeMember5000();
+		for(Member newMember : member5000) {
+            stopWatch.start();
+			memberServiceHibernate.add(newMember);
+//            memberServiceHibernate.flushAndClear();
+            stopWatch.stop();
+		}
+        System.out.println("Hiebrnate: insert 5000 complete!");
+        System.out.println(stopWatch.shortSummary());
+    }
+
+
+
 
 }

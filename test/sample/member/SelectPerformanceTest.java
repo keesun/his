@@ -42,7 +42,7 @@ public class SelectPerformanceTest {
         //WHEN
 		StopWatch watch = new StopWatch();
 		watch.start();
-		for(int i = 0 ; i < 100 ; i++) {
+		for(int i = 0 ; i < 10 ; i++) {
 			List<Member> members = memberServiceHibernate.list();
 		}
         memberServiceHibernate.flushAndClear();
@@ -65,7 +65,7 @@ public class SelectPerformanceTest {
         //WHEN
 		StopWatch watch = new StopWatch();
 		watch.start();
-		for(int i = 0 ; i < 100 ; i++) {
+		for(int i = 0 ; i < 10 ; i++) {
 			List<Member> members = memberServiceIbatis.list();
 		}
 		watch.stop();
