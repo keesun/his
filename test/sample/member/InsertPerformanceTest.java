@@ -51,8 +51,7 @@ public class InsertPerformanceTest {
         List<Member> member5000 = MemberTestUtils.makeMember5000();
 		for(Member newMember : member5000) {
             stopWatch.start();
-			memberServiceHibernate.add(newMember);
-            memberServiceHibernate.flushAndClear();
+			memberServiceIbatis.add(newMember);
             stopWatch.stop();
 		}
         System.out.println("iBatis: insert 5000 complete!");
